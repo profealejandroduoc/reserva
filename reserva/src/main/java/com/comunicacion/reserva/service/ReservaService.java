@@ -2,6 +2,7 @@
 package com.comunicacion.reserva.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,13 +12,16 @@ import com.comunicacion.reserva.repository.ReservaRepository;
 
 @Service
 public class ReservaService {
-    private final ReservaRepository repo;
-    private final RestTemplate restTemplate;
+    @Autowired
+    private ReservaRepository reservaRepository;
 
-    public ReservaService(ReservaRepository repo, RestTemplate restTemplate) {
-        this.repo = repo;
+    @Autowired
+    private RestTemplate restTemplate;
+
+    /*public ReservaService(ReservaRepository repo, RestTemplate restTemplate) {
+        this.reservaRepository = repo;
         this.restTemplate = restTemplate;
-    }
+    }*/
 
     public Reserva crearReserva(Reserva reserva) {
         // Llamada al microservicio cliente
@@ -26,6 +30,6 @@ public class ReservaService {
         if (cliente != null) {
             reserva.setCorreoCliente(cliente.getCorreo());
         }
-        return repo.save(reserva);
+        return reservaRepository.save(reserva);
     }
 }
