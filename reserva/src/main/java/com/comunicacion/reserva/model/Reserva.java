@@ -1,4 +1,3 @@
-// model/Reserva.java
 package com.comunicacion.reserva.model;
 
 import jakarta.persistence.*;

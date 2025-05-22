@@ -1,4 +1,3 @@
-// config/RestTemplateConfig.java
 package com.comunicacion.reserva.config;
 
 import org.springframework.context.annotation.Bean;

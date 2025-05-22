@@ -1,4 +1,3 @@
-// service/ReservaService.java
 package com.comunicacion.reserva.service;
 
 
@@ -17,11 +16,6 @@ public class ReservaService {
 
     @Autowired
     private RestTemplate restTemplate;
-
-    /*public ReservaService(ReservaRepository repo, RestTemplate restTemplate) {
-        this.reservaRepository = repo;
-        this.restTemplate = restTemplate;
-    }*/
 
     public Reserva crearReserva(Reserva reserva) {
         // Llamada al microservicio cliente
